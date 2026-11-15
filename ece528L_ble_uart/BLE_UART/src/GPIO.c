@@ -213,6 +213,66 @@ void LED_Controller(uint8_t button_status, uint8_t switch_status)
     }
 }
 
+
+void PMOD_SWT_and_UART_Process(uint8_t switch_status)
+{
+    switch(switch_status)
+    {
+        //Part A
+        case 0x00:
+        {
+            BLE_UART_OutChar(0xAA);
+            Clock_Delay1ms(1000);
+            BLE_UART_OutChar(0x55);
+            Clock_Delay1ms(1000);
+            BLE_UART_OutChar(0xFF);
+            Clock_Delay1ms(1000);
+            BLE_UART_OutChar(0x00);
+            Clock_Delay1ms(1000);
+        }
+        break;
+
+        //Part B
+        case 0x01:
+        {
+            BLE_UART_OutChar(0xAA);
+            Clock_Delay1ms(1000);
+        }
+        break;
+
+        //Part B
+        case 0x02:
+        {
+            BLE_UART_OutChar(0x10);
+            Clock_Delay1ms(1000);
+        }
+        break;
+
+        //Part B
+        case 0x04:
+        {
+            BLE_UART_OutChar(0xF0);
+            Clock_Delay1ms(1000);
+        }
+        break;
+
+        //Part B
+        case 0x08:
+        {
+            BLE_UART_OutChar(0x0F);
+            Clock_Delay1ms(1000);
+        }
+        break;
+
+        //Part B
+        default:
+        {
+            BLE_UART_OutChar(0x00);
+            Clock_Delay1ms(1000);
+        }
+    }
+}
+
 void Chassis_Board_LEDs_Init()
 {
     P8->SEL0 &= ~0xE1;

@@ -29,6 +29,7 @@
 #include <stdint.h>
 #include "msp.h"
 #include "Clock.h"
+#include "BLE_UART.h"
 
 // Constant definitions for the built-in red LED
 extern const uint8_t RED_LED_OFF;
@@ -352,6 +353,18 @@ void LED_Pattern_2();
  * @return None
  */
 void LED_Controller(uint8_t button_status, uint8_t switch_status);
+
+/**
+ *  @brief The PMOD_SWT_and_UART_Process function checks the value
+ *  of the PMOD switches. To combine the operations of Part A and Part B
+ *  for simplicity, switch value 0x00 is designated for Part A.
+ *  The remainder of this function is for Part B.
+ *
+ *  @param switch_status Represents the value of the PMOD switches
+ *
+ *  @return None
+ */
+void PMOD_SWT_and_UART_Process(uint8_t switch_status);
 
 /**
  * @brief The Chassis_Board_LEDs_Init function initializes the LEDs on the chassis board.
