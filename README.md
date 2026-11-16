@@ -49,15 +49,12 @@ This would be bit 13 (UCMSB) of the CTLW0 register [4].
 
 7. Provide the mnemonic and primary module function for each pin listed. Refer to Table 6-45 (Default Mapping) on page 126 of the MSP432P401R Datasheet.
 
-| PIN  |       Mnemonic         | Input Pin Primary Function | Output Pin Primary Function |
-|------|------------------------|----------------------------|-----------------------------|
-| P2.2 | PM_UCA1RXD/PM_UCA1SOMI |     eUSCI_A1 UART RXD/eUSCI_A1 SPI SOMI                  |
--------|------------------------|----------------------------------------------------------|
-| P2.3 | PM_UCA1TXD/PM_UCA1SIMO |     eUSCI_A1 UART TXD/eUSCI_A1 SPI SIMO                  |
--------|------------------------|----------------------------------------------------------|
-| P3.2 | PM_UCA2RXD/PM_UCA2SOMI |     eUSCI_A2 UART RXD/eUSCI_A1 SPI SOMI                  |
--------|------------------------|----------------------------------------------------------|
-| P3.3 | PM_UCA2TXD/PM_UCA2SIMO |     eUSCI_A2 UART TXD/eUSCI_A1 SPI SIMO                  |
+| PIN  |       Mnemonic         |      Input Pin Primary Function     | Output Pin Primary Function         |
+|------| ---------------------- | ------------------------------------| ------------------------------------|
+| P2.2 | PM_UCA1RXD/PM_UCA1SOMI | eUSCI_A1 UART RXD/eUSCI_A1 SPI SOMI | eUSCI_A1 UART RXD/eUSCI_A1 SPI SOMI | 
+| P2.3 | PM_UCA1TXD/PM_UCA1SIMO | eUSCI_A1 UART TXD/eUSCI_A1 SPI SIMO | eUSCI_A1 UART TXD/eUSCI_A1 SPI SIMO |
+| P3.2 | PM_UCA2RXD/PM_UCA2SOMI | eUSCI_A2 UART RXD/eUSCI_A1 SPI SOMI | eUSCI_A2 UART RXD/eUSCI_A1 SPI SOMI |
+| P3.3 | PM_UCA2TXD/PM_UCA2SIMO | eUSCI_A2 UART TXD/eUSCI_A1 SPI SIMO | eUSCI_A2 UART TXD/eUSCI_A1 SPI SIMO |
 
 [5]
 8. Write a void function named P2_2_and_P2_3_Init that takes no arguments and configures the following pins to use primary function mode: P2.2 and P2.3. It is not necessary to set the direction of the pins. 
